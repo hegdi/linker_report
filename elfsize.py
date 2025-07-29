@@ -1,13 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from __future__ import print_function
 from subprocess import check_output
 from collections import OrderedDict
 from os import path
 import re, os, json
+from config import nm
 
 # arm-none-eabi-nm needs to be in the environment path
-nm = "arm-none-eabi-nm"
 nm_opts = "-l -S -C -f sysv"
 default_datafile = "data-flare.js"
 repo_root = path.dirname(path.abspath(__file__))
@@ -51,7 +51,7 @@ def main(binaries, output):
     root = OrderedDict({"name": "mbed", "children": []})
     for line in op.split('\n'):
         if '|' in line:
-            l = [x.strip() for x in re.split("\||\t", line.strip())]
+            l = [x.strip() for x in re.split(r"\||\t", line.strip())]
             if len(l) == 7:
                 l.append('./libc')
 
