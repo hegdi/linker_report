@@ -10,12 +10,12 @@ var b = {
 
 // Mapping of step names to colors.
 var colors = {
-  ".bss": "#5687d1",
-  ".data": "#7b615c",
-  ".uvisor.bss": "#de783b",
-  ".uvisor.secure": "#6ab975",
+  ".dram0.bss": "#5687d1",
+  ".dram0.data": "#7b615c",
+  ".iram0.text": "#de783b",
+  ".flash.rodata": "#6ab975",
   ".page_heap": "#a173d1",
-  ".text": "#bbbbbb",
+  ".flash.text": "#bbbbbb",
   "mbed": "#e0e0e0"
 };
 
